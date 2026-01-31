@@ -99,12 +99,12 @@ def classified():
     
     return render_template(
         'classified.html',
-        stmt_5=stmt_by_class[5].to_html(classes='table table-striped', index=False) if not stmt_by_class[5].empty else '<p>No transactions</p>',
-        stmt_6=stmt_by_class[6].to_html(classes='table table-striped', index=False) if not stmt_by_class[6].empty else '<p>No transactions (Statement has no Class 6)</p>',
-        stmt_7=stmt_by_class[7].to_html(classes='table table-striped', index=False) if not stmt_by_class[7].empty else '<p>No transactions</p>',
-        sett_5=sett_by_class[5].to_html(classes='table table-striped', index=False) if not sett_by_class[5].empty else '<p>No transactions</p>',
-        sett_6=sett_by_class[6].to_html(classes='table table-striped', index=False) if not sett_by_class[6].empty else '<p>No transactions</p>',
-        sett_7=sett_by_class[7].to_html(classes='table table-striped', index=False) if not sett_by_class[7].empty else '<p>No transactions (Settlement has no Class 7)</p>',
+        stmt_5=stmt_by_class[5].to_html(classes='table', index=False) if not stmt_by_class[5].empty else '<p class="text-muted">No transactions</p>',
+        stmt_6=stmt_by_class[6].to_html(classes='table', index=False) if not stmt_by_class[6].empty else '<p class="text-muted">No transactions (Statement has no Class 6)</p>',
+        stmt_7=stmt_by_class[7].to_html(classes='table', index=False) if not stmt_by_class[7].empty else '<p class="text-muted">No transactions</p>',
+        sett_5=sett_by_class[5].to_html(classes='table', index=False) if not sett_by_class[5].empty else '<p class="text-muted">No transactions</p>',
+        sett_6=sett_by_class[6].to_html(classes='table', index=False) if not sett_by_class[6].empty else '<p class="text-muted">No transactions</p>',
+        sett_7=sett_by_class[7].to_html(classes='table', index=False) if not sett_by_class[7].empty else '<p class="text-muted">No transactions (Settlement has no Class 7)</p>',
         labels={
             5: 'Present in Both',
             6: 'Present in Settlement but not in Statement',
