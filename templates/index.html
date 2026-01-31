@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Upload - Reconciliation{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card p-4">
+            <h4 class="mb-4">Upload Statement & Settlement Files</h4>
+            <form method="post" action="{{ url_for('upload_files') }}" enctype="multipart/form-data">
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Statement File</label>
+                    <div class="upload-zone">
+                        <input type="file" name="statement" accept=".xlsx,.xls" class="form-control" required>
+                        <small class="text-muted d-block mt-2">Excel file with transaction statement</small>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Settlement File</label>
+                    <div class="upload-zone">
+                        <input type="file" name="settlement" accept=".xlsx,.xls" class="form-control" required>
+                        <small class="text-muted d-block mt-2">Excel file with settlement data</small>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Process & Reconcile</button>
+                <a href="{{ url_for('classified') }}" class="btn btn-outline-secondary btn-lg ms-2">View Classified</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
